@@ -6,7 +6,7 @@
 
 ### If You Are Using WordPress
 
-1. Download our plugin [here](#).
+1. Download our plugin [here](https://github.com/rasheedammar/Mtjree/blob/main/mtjree_store.zip).
 2. Contact us [here](#) to get started.
 
 That's all! It's that simple.
