@@ -20,22 +20,26 @@ That's all! It's that simple.
 
 When sending data, make sure the request is a `POST` request and the body contains the following fields (each on a new line):
 
-- `order_id`
-- `total`
-- `shop_type`
-- `shop_url`
-- `currency` (3-letter format)
-- `email`
-- `first_name`
-- `last_name`
-- `country` (2-letter uppercase code)
-- `city`
-- `billing_address`
-- `postcode`
-- `hookUrl` (must be on the same domain as `shop_url`)
-- `customer_id`
-- `timestamp` (A unique 16-character alphanumeric value, e.g., generate it like this:
+| Field            | Type                        |
+|------------------|-----------------------------|
+| `order_id`       | `number` or `string`        |
+| `email`          | `string`                    |
+| `shop_type`      | `string`                    |
+| `shop_url`       | `string`                    |
+| `currency`       | `string` (3-letter format)  |
+| `total`          | `number`                    |
+| `first_name`     | `string`                    |
+| `last_name`      | `string`                    |
+| `country`        | `string` (2-letter code)    |
+| `city`           | `string`                    |
+| `billing_address`| `string`                    |
+| `postcode`       | `number`                    |
+| `hookUrl`        | `string`                    |
+| `customer_id`    | `number` or `string`        |
+| `timestamp`      | `string` (16 characters)    |
+| `phone`          | `string`                    |
 
+- `timestamp` (A unique 16-character alphanumeric value, e.g., generate it like this:
     ```php
     $bytes = random_bytes(8);
     $timestamp = bin2hex($bytes);
