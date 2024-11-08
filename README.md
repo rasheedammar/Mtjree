@@ -20,24 +20,26 @@ That's all! It's that simple.
 
 When sending data, make sure the request is a `POST` request and the body contains the following fields (each on a new line):
 
-| Field            | Type                        |
-|------------------|-----------------------------|
-| `order_id`       | `number` or `string`        |
-| `email`          | `string`                    |
-| `shop_type`      | `string`                    |
-| `shop_url`       | `string`                    |
-| `currency`       | `string` (3-letter format)  |
-| `total`          | `number`                    |
-| `first_name`     | `string`                    |
-| `last_name`      | `string`                    |
-| `country`        | `string` (2-letter code)    |
-| `city`           | `string`                    |
-| `billing_address`| `string`                    |
-| `postcode`       | `number`                    |
-| `hookUrl`        | `string`                    |
-| `customer_id`    | `number` or `string`        |
-| `timestamp`      | `string` (16 characters)    |
-| `phone`          | `string`                    |
+| Field            | Type                        | Description                                    |
+|------------------|-----------------------------|------------------------------------------------|
+| `order_id`       | `number` or `string`        | Unique identifier for the order.               |
+| `email`          | `string`                    | Customer's email address.                      |
+| `shop_type`      | `string`                    | Type of shop (e.g., "wordpress", "react").       |
+| `shop_url`       | `string`                    | URL of the shop.                               |
+| `currency`       | `string` (3-letter format)  | Currency code (e.g., USD, EUR).                |
+| `total`          | `number`                    | Total order amount.                            |
+| `first_name`     | `string`                    | Customer's first name.                         |
+| `last_name`      | `string`                    | Customer's last name.                          |
+| `country`        | `string` (2-letter code)    | Country code (e.g., US, CA).                   |
+| `city`           | `string`                    | City of the customer.                          |
+| `billing_address`| `string`                    | Customer's billing address.                    |
+| `postcode`       | `number`                    | Postal code of the billing address.            |
+| `hookUrl`        | `string`                    | Webhook URL for order updates.                 |
+| `customer_id`    | `number` or `string`        | Unique identifier for the customer.            |
+| `timestamp`      | `string` (16 characters)    | A unique 16-character alphanumeric value in a 16-character format.      |
+| `phone`          | `string`                    | Customer's phone number.                       |
+| `fail_url`       | `string` (optional)         | URL to redirect to in case of failure.         |
+
 
 - `timestamp` (A unique 16-character alphanumeric value, e.g., generate it like this:
     ```php
