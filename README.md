@@ -55,5 +55,6 @@ When sending data, make sure the request is a `POST` request and the body contai
 ---
 
 **Note:** Ensure that the `hookUrl` is on the same domain as `shop_url` to maintain security and data integrity.
+**In case of disagreement, contact us.**
 
 For any questions or support, please don't hesitate to contact us.
