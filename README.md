@@ -9,7 +9,13 @@
 1. Download our plugin [here](https://github.com/rasheedammar/Mtjree/blob/main/mtjree_store.zip).
 2. Contact us [here](#) to get started.
 
-That's all! It's that simple.
+### What's New in Version 4.0.0
+
+1. **Test Mode**: Added a test mode for developers to simulate transactions without real payments.
+2. **API Keys for Updating Security**: Introduced API keys to enhance security during transactions.
+3. **Allowed Change Redirect Page**: Users can now change the redirect page after a successful or failure payment.
+4. **Embedded Notification System**: Implemented an embedded notification system to keep users informed about news and updates.
+5. **Vendor Logo and Name**: Added the ability to display the vendor's logo and name on the payment page for better brand recognition.
 
 ### If You Have a Custom-Built Website and Want to Integrate
 
@@ -39,7 +45,9 @@ When sending data, make sure the request is a `POST` request and the body contai
 | `timestamp`      | `string` (16 characters)    | A unique 16-character alphanumeric value in a 16-character format.      |
 | `phone`          | `string`                    | Customer's phone number.                       |
 | `fail_url`       | `string` (optional)         | URL to redirect to in case of failure.         |
-
+| `meta_data`      | `json`                      | Additional data you want to receive in the request. |
+| `logo_url`       | `string`                    | URL of the photo to be displayed on the payment page. |
+| `vendor_name`    | `string`                    | Name of the vendor to be displayed on the payment page. |
 
 - `timestamp` (A unique 16-character alphanumeric value, e.g., generate it like this:
     ```php
@@ -47,6 +55,14 @@ When sending data, make sure the request is a `POST` request and the body contai
     $timestamp = bin2hex($bytes);
     ```
 - `phone`
+### Required Headers
+
+When making a request, ensure to include the following headers:
+
+| Header            | Value                        | Description                                    |
+|-------------------|------------------------------|------------------------------------------------|
+| `Authorization`   | `Bearer <API_key>`           | Your API key for authorization.                |
+| `Content-Type`    | `application/json`           | The content type of the request.               |
 
 ### Send Your Request To:
 
