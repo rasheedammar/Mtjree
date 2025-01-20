@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "5cb80eee-66b8-414c-b844-7a427204880f",
+		"name": "Mtjree Payment Services API",
+		"description": "Requests:\n\n- Send request to gateway\n    \n- Recieve result from Gateway\n    \n\nDeveloper : mo_sleem\n\nStartFragment[محمد سليم - معرض الأعمال | مستقل](https://mostaql.com/u/abdelrahman_am/portfolio)EndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36432142"
+	},
+	"item": [
+		{
+			"name": "Send request to gateway",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <API_token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"nextjs\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.756,\r\n  \"first_name\": \"John2\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"EG\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://yourhook.com\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j3k6l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\",\r\n  \"secret_key\":\"your_secret_key_here\",\r\n  \"meta_data\": {\r\n    \"user_id\": 123,\r\n    \"user_name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"preferences\": {\r\n      \"theme\": \"dark\",\r\n      \"notifications\": true,\r\n      \"language\": \"en\"\r\n    },\r\n    \"purchases\": [\r\n      {\r\n        \"product_id\": 101,\r\n        \"product_name\": \"Wireless Mouse\",\r\n        \"price\": 25.99,\r\n        \"currency\": \"USD\"\r\n      },\r\n      {\r\n        \"product_id\": 102,\r\n        \"product_name\": \"Keyboard\",\r\n        \"price\": 45.50,\r\n        \"currency\": \"USD\"\r\n      }\r\n    ]\r\n  },\r\n  \"logo_url\":\"url-tp-your-logo.png\",\r\n  \"vendor_name\":\"vendor_name\",\r\n  \"test_mode\":true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+					"protocol": "https",
+					"host": [
+						"mtjree",
+						"link"
+					],
+					"path": [
+						"wp-json",
+						"custom",
+						"v1",
+						"proxy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"url\": \"https://example.com/transaction/redirect\"\n}"
+				},
+				{
+					"name": "error from gateway",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"message\": \"Error during payment request: Payment gateway not reachable\"\r\n}\r\n"
+				},
+				{
+					"name": "error from gateway",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"message\": \"No other payment methods are available\"\r\n}\r\n"
+				},
+				{
+					"name": "No payment methods for this domain",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"message\": \"Domain not found in payment methods\"\r\n}\r\n"
+				},
+				{
+					"name": "missed params error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"message\": \"Invalid request\"\r\n}\r\n"
+				},
+				{
+					"name": "Domain not found or not active",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"message\": \"Domain not found\"\r\n}\r\n"
+				},
+				{
+					"name": "Error in sent data contact support",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"order_id\": \"123456\",\r\n  \"email\": \"customer@example.com\",\r\n  \"shop_type\": \"wordpress\",\r\n  \"shop_url\": \"https://example.com\",\r\n  \"currency\": \"USD\",\r\n  \"total\": 150.75,\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"country\": \"US\",\r\n  \"city\": \"New York\",\r\n  \"billing_address\": \"123 Main St\",\r\n  \"postcode\": 10001,\r\n  \"hookUrl\": \"https://example.com/webhook\",\r\n  \"customer_id\": \"cust_001\",\r\n  \"timestamp\": \"4e5f6g7h8j9k0l1m\",\r\n  \"phone\": \"+1234567890\",\r\n  \"fail_url\": \"https://example.com/failure\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mtjree.link/wp-json/custom/v1/proxy",
+							"protocol": "https",
+							"host": [
+								"mtjree",
+								"link"
+							],
+							"path": [
+								"wp-json",
+								"custom",
+								"v1",
+								"proxy"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n  \"message\": \"error while inserting data\"\r\n}\r\n"
+				}
+			]
+		},
+		{
+			"name": "Update status in hook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <API_token>",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"new_status\": true,\r\n  \"user_id\": 12345,\r\n  \"order_id\": 67890,\r\n  \"meta_data\": {\r\n    \"user_id\": 123,\r\n    \"user_name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"preferences\": {\r\n      \"theme\": \"dark\",\r\n      \"notifications\": true,\r\n      \"language\": \"en\"\r\n    },\r\n    \"purchases\": [\r\n      {\r\n        \"product_id\": 101,\r\n        \"product_name\": \"Wireless Mouse\",\r\n        \"price\": 25.99,\r\n        \"currency\": \"USD\"\r\n      },\r\n      {\r\n        \"product_id\": 102,\r\n        \"product_name\": \"Keyboard\",\r\n        \"price\": 45.50,\r\n        \"currency\": \"USD\"\r\n      }\r\n    ]\r\n  }\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://example.com/webhook",
+					"protocol": "https",
+					"host": [
+						"example",
+						"com"
+					],
+					"path": [
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
