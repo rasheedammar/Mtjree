@@ -48,6 +48,7 @@ When sending data, make sure the request is a `POST` request and the body contai
 | `meta_data`      | `json`                      | Additional data you want to receive in the request. |
 | `logo_url`       | `string`                    | URL of the photo to be displayed on the payment page. |
 | `vendor_name`    | `string`                    | Name of the vendor to be displayed on the payment page. |
+| `test_mode`    | `bool`                    | Indicates whether the order is in test mode (true for test, false for live).|
 
 - `timestamp` (A unique 16-character alphanumeric value, e.g., generate it like this:
     ```php
