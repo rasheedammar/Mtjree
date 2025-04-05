@@ -16,6 +16,11 @@
 3. **Allowed Change Redirect Page**: Users can now change the redirect page after a successful or failure payment.
 4. **Embedded Notification System**: Implemented an embedded notification system to keep users informed about news and updates.
 5. **Vendor Logo and Name**: Added the ability to display the vendor's logo and name on the payment page for better brand recognition.
+6. **Order Status API**: Integrated with the new operations-manager API to retrieve real-time order status updates.
+
+### Order Status Handling
+
+The plugin now automatically checks order status after payment by calling our Order Status API. This ensures that your WooCommerce orders are always in sync with payment status.
 
 ### If You Have a Custom-Built Website and Want to Integrate
 
@@ -56,6 +61,27 @@ When sending data, make sure the request is a `POST` request and the body contai
     $timestamp = bin2hex($bytes);
     ```
 - `phone`
+
+### Order Status API
+
+To check the status of an order, you can call:
+
+```
+GET https://mtjree.link/wp-json/operations-manager/v1/get-order-status
+```
+
+Required parameters:
+- `order_id`: Your order's unique identifier
+- `domain`: Your website domain
+
+Required headers:
+- `Authorization`: Bearer <your_api_key>
+
+The API will return:
+- `status`: Boolean indicating if payment was successful
+- `notes`: Any additional information about the order
+- `last_checked`: Timestamp of when the status was last updated
+
 ### Required Headers
 
 When making a request, ensure to include the following headers:
